@@ -3,11 +3,15 @@
         <title>Django blog</title>
     </head>
     <body>
-        <h1><a href="">Django blog</a></h1>
         <div>
-            <p>publicado em 16.10.2017, 12:44</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Post aleatório, yay!</p>
+            <h1><a href="">Django blog</a></h1>
         </div>
+        {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %}
     </body>
 </html>
